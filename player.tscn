@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0qcple2tp2h8"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_t466j"]
+[ext_resource type="Texture2D" uid="uid://dnvujuiieirls" path="res://assets/maps/craftpix-net-434566-free-robot-pixel-art-sprite-sheets/Destroyer/Walk.png" id="2_mase3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hdqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mase3")
+}],
+"loop": true,
+"name": &"robot",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qb5xc"]
+radius = 7.0
+height = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-230, -331)
+collision_layer = 2
+script = ExtResource("1_t466j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(231, 315.5)
+scale = Vector2(0.671875, 0.570313)
+sprite_frames = SubResource("SpriteFrames_6hdqq")
+animation = &"robot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(231, 327)
+shape = SubResource("CapsuleShape2D_qb5xc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(231, 327)
+zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
