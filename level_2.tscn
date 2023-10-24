@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://uf08e8ujjrx5"]
+[gd_scene load_steps=6 format=3 uid="uid://uf08e8ujjrx5"]
 
 [ext_resource type="Texture2D" uid="uid://cklmlqi3t5n1t" path="res://assets/maps/street.png" id="1_2a4yd"]
 [ext_resource type="PackedScene" uid="uid://c0qcple2tp2h8" path="res://player.tscn" id="2_psa5g"]
+[ext_resource type="AudioStream" uid="uid://bm03f0786xjly" path="res://assets/maps/Music/x2mate.com - Energetic Rock Background  (No Copyright Music) By Anwar Amr (128 kbps).mp3" id="3_ww1w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_445dn"]
 texture = ExtResource("1_2a4yd")
@@ -682,3 +683,7 @@ text = "Level 2"
 
 [node name="Player" parent="." instance=ExtResource("2_psa5g")]
 position = Vector2(12, -23)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ww1w3")
+autoplay = true
